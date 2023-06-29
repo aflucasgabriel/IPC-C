@@ -1,44 +1,26 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 int main()
 {
-    // Lucas Gabriel Alves Ferreira
-    // 12121BSI200
-
-  int linhaA, colunaA, linhaB, colunaB;
-  printf("Digite as linhas e colunas da primeira matriz: ");
-  scanf("%d %d", &linhaA, &colunaA);
-  printf("Digite as linhas e colunas da segunda matriz: ");
-  scanf("%d %d", &linhaB, &colunaB);
-
-  if (linhaA != colunaB || colunaA != linhaB)
-    printf("Nao e possivel multiplicar!\n");
-  else
-  {
-    float matrizA[linhaA][colunaA], matrizB[linhaB][colunaB];
-
-    for (int i = 0; i < linhaA; i++)
-      for (int j = 0; j < colunaA; j++)
-      {
-        printf("Digite o valor da posicao [%d][%d]: ", i, j);
-        scanf("%f", &matrizA[i][j]);
-      }
-    for (int i = 0; i < linhaB; i++)
-      for (int j = 0; j < colunaB; j++) {
-        printf("Digite o valor da posicao [%d][%d]: ", i, j);
-        scanf("%f", &matrizB[i][j]);
-      }
-    float s;
-    for (int i = 0; i < linhaA; i++) {
-      for (int j = 0; j < colunaB; j++) {
-        s = 0;
-        for (int k = 0; k < linhaB; k++) {
-          s += matrizA[i][k] * matrizB[k][j];
-        }
-        printf("%.2f ", s);
-      }
+   int a, b, c;
+    printf("a b c: "); scanf(" %d %d %d", &a,&b,&c);
+    printf("\nResolvendo equacao %dx^2 + %dx + %d = 0\n\n",a,b,c);
+    if (a == 0) {
+        printf("nao eh eq 2o grau."); return 0;
     }
-  }
-    return 0;
+    float delta = b * b - 4 * a * c;
+    if (delta == 0) {
+        float x = - b / (2 * a);
+        printf("Raiz %f\n\n", x);
+    }
+    else if (delta > 0) {
+        float x1 = (-b + sqrt(delta)) / (2 * a);
+        float x2 = (-b - sqrt(delta)) / (2 * a);
+        printf("Raizes %f %f\n\n", x1, x2);
+    }
+    else {
+        printf("Nao tem raizes reais.\n\n");
+    }
 }
