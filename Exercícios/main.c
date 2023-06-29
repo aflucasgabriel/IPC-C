@@ -3,25 +3,29 @@
 
 int main()
 {
-    char sexo;
-    printf("digite seu sexo (m ou f): ");
-    sexo = getchar();
+    float ca, co, h;
+    float soma_catetos;
 
-    float altura, ideal;
-    printf("Digite sua altura: ");
-    scanf("%f", &altura);
+    printf("Digite dois números correspondentes a catetos:"); (ca, co);
+    scanf("%f %f", &ca, &co);
 
-    if ((sexo == 'F') || (sexo == 'f'))
-        ideal = 62.1 * altura - 44.7;
+    soma_catetos = pow(ca, 2) + pow(ca,2);
+    h = soma_catetos;
 
-    else if ((sexo == 'M')|| (sexo == 'm'))
-        ideal = 72.7 * altura - 58;
-        else {
-            printf("Opcao invalida.");
-            return 0;
-        }
+    printf("A hipotenusa e %.3f", h);
 
-        printf("Sexo %c altura %.2f peso ideal %.2f", sexo, altura, ideal);
+
+    int ca, co, h;
+    int soma_catetos;
+
+    printf("Digite dois números correspondentes a catetos:"); (ca, co);
+    scanf("%d %d", &ca, &co);
+
+    soma_catetos = pow(ca, 2) + pow(ca,2);
+    h = soma_catetos;
+
+    printf("A hipotenusa e %.3d", h);
+
 
     return 0;
 }
